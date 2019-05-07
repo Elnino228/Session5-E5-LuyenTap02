@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Enter size of array:</p>
+<input type="text" id="txtSize">
+<button type="button" id="btnGenerator" onclick="fGenerator()">Generate Array</button>
+<button type="button" id="btnCheck" onclick="fCountNumbers()">Count charater is numberic</button>
+<div id="display"></div><br>
+<h2 id="result"></h2>
+<script>
+    let arr = [];
+
+    function GenerateNumberOrCharater() {
+        let result;
+        let Charaters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let len = Charaters.length;
+        result = Charaters.charAt(Math.floor(Math.random() * len));
+        return result;
+    }
+
+    function fGenerator() {
+        arr = [];
+        let e = '<hr/>' + 'Your Array:' + '<br>';
+        let size = document.getElementById('txtSize').value;
+        for (let i = 0; i < size; i++) {
+            arr[i] = GenerateNumberOrCharater();
+            e += 'Element ' + i + ' = ' + arr[i] + '<br/>';
+        }
+        document.getElementById('display').innerHTML = e;
+        size = '';
+    }
+
+    function fCountNumbers() {
+        let count=0;
+        let result='';
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (!isNaN(parseInt(arr[i]))) {
+                count++;
+            }
+        }
+        result += 'Result: ' + count + '<br/>';
+        //console.log(arr);
+        document.getElementById('result').innerHTML = result;
+    }
+
+
+</script>
+</body>
+</html>

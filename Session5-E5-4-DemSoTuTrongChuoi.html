@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Enter the string:</p>
+<input type="text" id="txtStr">
+<button type="button" id="btnCountWord" onclick="fCountWord()">Count word</button>
+<div id="display"></div><br>
+<h2 id="result"></h2>
+<script>
+    function fCountWord() {
+        let result='';
+        let numWords = 0;
+        let str = document.getElementById('txtStr').value;
+        str = str.trim();
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]!='') {
+                numWords++;
+            }
+
+        }
+        result += 'Result: ' + numWords + '<br/>';
+        document.getElementById('result').innerHTML = result;
+    }
+
+
+</script>
+</body>
+</html>

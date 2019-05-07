@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="txtValue" >
+<button type="button" id="btnAdd" value="Add" onclick="fAdd()">Add</button>
+<button type="button" id="btnCheck" value="Showitems>10" onclick="fReplace()">Replace "-" to "_"</button>
+<p>Your array:</p>
+<div id="display"></div>
+<p>Result:</p>
+<div id="result"></div>
+<script>
+    let x=0;
+    let arr=[];
+    function fAdd() {
+        let elmInput=document.getElementById('txtValue');
+        arr[x]=elmInput.value;
+        document.getElementById('display').innerHTML='['+arr+']';
+        x++;
+        elmInput.value='';
+    }
+    function fReplace() {
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]=='-') {
+                arr[i]='_';
+            }
+
+        }
+        document.getElementById('result').innerHTML='['+arr+']';
+    }
+
+
+</script>
+</body>
+</html>

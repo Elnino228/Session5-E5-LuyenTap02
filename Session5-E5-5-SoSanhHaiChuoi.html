@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Enter the  first string:</p>
+<input type="text" id="txtStr1">
+<br>
+<p>Enter the  second string:</p>
+<input type="text" id="txtStr2">
+<button type="button" onclick="fCompare()">Compare Two String</button>
+<div id="display"></div><br>
+<h2 id="result"></h2>
+<script>
+    function fCompare() {
+        let result='';
+        let isLike=true;
+        let str1 = document.getElementById('txtStr1').value;
+        let str2 = document.getElementById('txtStr2').value;
+        if (str1.length==str2.length) {
+            for (let i = 0; i <str1.length ; i++) {
+                if (str1[i]!=str2[i]) {
+                    isLike=false;
+                    break;
+                }
+
+            }
+        } else isLike=false;
+        if (isLike) result='First string LIKE second string';
+        else result='First string NOT LIKE second string';
+        result = 'Result: ' + result + '<br/>';
+        document.getElementById('result').innerHTML = result;
+    }
+
+
+</script>
+</body>
+</html>

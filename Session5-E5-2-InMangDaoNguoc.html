@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>First array:</p>
+<p id="MangBanDau"></p>
+<p>Result:</p>
+<p id="Result"></p>
+<script>
+    let a = ['E','l','n','i','n','o', 2, 2, 8];
+    document.getElementById('MangBanDau').innerHTML=a.join('');
+    let strArr='';
+    for (let i=a.length-1;i>=0;i--) {
+        strArr+=a[i];
+    }
+    document.getElementById('Result').innerHTML=strArr;
+</script>
+</body>
+</html>
